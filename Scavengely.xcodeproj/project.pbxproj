@@ -31,6 +31,7 @@
 		81D4F8C8197AD31000272686 /* games.plist in Resources */ = {isa = PBXBuildFile; fileRef = 81D4F8C7197AD31000272686 /* games.plist */; };
 		81D4F8E1197AED0200272686 /* Mission.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D4F8DF197AED0200272686 /* Mission.m */; };
 		81D4F8E2197AED0200272686 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D4F8E0197AED0200272686 /* Game.m */; };
+		81D4F8E6197AEFD100272686 /* GameSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D4F8E4197AEFD100272686 /* GameSelectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,8 @@
 		81D4F8DE197AED0200272686 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = Models/Game.h; sourceTree = "<group>"; };
 		81D4F8DF197AED0200272686 /* Mission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Mission.m; path = Models/Mission.m; sourceTree = "<group>"; };
 		81D4F8E0197AED0200272686 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Game.m; path = Models/Game.m; sourceTree = "<group>"; };
+		81D4F8E4197AEFD100272686 /* GameSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSelectionViewController.m; sourceTree = "<group>"; };
+		81D4F8E5197AEFD100272686 /* GameSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSelectionViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +162,7 @@
 				81D4F8DC197AECEB00272686 /* Models */,
 				0806C21D197ADFFE003E7C6D /* Icons */,
 				0806C21C197ADFFA003E7C6D /* Images */,
+				81D4F8E3197AEFBC00272686 /* Game Play */,
 				81D4F8A1197ACFA300272686 /* AppDelegate.h */,
 				81D4F8A2197ACFA300272686 /* AppDelegate.m */,
 				81D4F8A4197ACFA300272686 /* Main.storyboard */,
@@ -168,6 +172,8 @@
 				0806C21A197ADEE4003E7C6D /* NewGameViewController.m */,
 				0806C213197ADE4A003E7C6D /* ActivityViewController.h */,
 				0806C214197ADE4A003E7C6D /* ActivityViewController.m */,
+				81D4F8E5197AEFD100272686 /* GameSelectionViewController.h */,
+				81D4F8E4197AEFD100272686 /* GameSelectionViewController.m */,
 				81D4F8A7197ACFA300272686 /* ViewController.h */,
 				81D4F8A8197ACFA300272686 /* ViewController.m */,
 				81D4F8AA197ACFA300272686 /* Images.xcassets */,
@@ -215,6 +221,13 @@
 				81D4F8E0197AED0200272686 /* Game.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		81D4F8E3197AEFBC00272686 /* Game Play */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Game Play";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,6 +341,7 @@
 				81D4F8A3197ACFA300272686 /* AppDelegate.m in Sources */,
 				81D4F89F197ACFA300272686 /* main.m in Sources */,
 				0806C215197ADE4A003E7C6D /* ActivityViewController.m in Sources */,
+				81D4F8E6197AEFD100272686 /* GameSelectionViewController.m in Sources */,
 				0806C218197ADEBA003E7C6D /* InvitesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

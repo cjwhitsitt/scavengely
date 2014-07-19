@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GameSelectionViewController : UIViewController
+@interface GameSelectionViewController : UITableViewController
 
 @end
