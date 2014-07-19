@@ -89,7 +89,7 @@
 			</dict>
 			<dict>
 				<key>prompt</key>
-				<string>What does Peter Parker do to make money in the first movie?</string>
+				<string>Get someone to answer this question:\nWhat does Peter Parker do to make money in the first movie?\n\nAnswer: pizza delivery</string>
 				<key>type</key>
 				<string>text</string>
 			</dict>

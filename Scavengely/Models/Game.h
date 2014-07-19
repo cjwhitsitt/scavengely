@@ -10,8 +10,8 @@
 
 @interface Game : NSObject
 
-@property (strong, readonly, nonatomic) NSString *title;
-@property (strong, readonly, nonatomic) UIImage *image;
-@property (strong, readonly, nonatomic) NSArray *missions;
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) UIImage *image;
+@property (strong, nonatomic) NSArray *missions;
 
 @end

@@ -8,19 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+#define kMissionTypeImage = @"image";
+#define kMissionTypeText = @"text";
+#define kMissionTypeAudio = @"audio";
+#define kMissionTypeMultipleChoice = @"multiplechoice";
+
 @interface Mission : NSObject
 
-enum SCMissionType {
-    image,
-    text,
-    multiplechoice,
-    audio
-};
-
-@property (nonatomic, readonly) int number;
-@property (nonatomic, readonly, strong) NSString *prompt;
-@property (nonatomic, readonly) int type;
-@property (nonatomic, strong) NSObject *answer;
+@property (nonatomic) int number;
+@property (nonatomic, strong) NSString *prompt;
+@property (nonatomic, strong) NSString *type;
 @property (nonatomic) NSTimeInterval elapsedTime;
 
 @end
