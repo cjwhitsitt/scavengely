@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>Back to the Future</string>
+		<key>missions</key>
+		<array>
+			<dict>
+				<key>prompt</key>
+				<string>Ask someone what movie this quote is from: &quot;Well, that is your name, isn&apos;t it? Calvin Klein? It&apos;s written all over your underwear.&quot;</string>
+				<key>type</key>
+				<string>audience</string>
+			</dict>
+			<dict>
+				<key>prompt</key>
+				<string>Find someone with hair like Doc.</string>
+				<key>type</key>
+				<string>image</string>
+			</dict>
+			<dict>
+				<key>prompt</key>
+				<string>Take a picture of a DeLorean.</string>
+				<key>type</key>
+				<string>image</string>
+			</dict>
+			<dict>
+				<key>prompt</key>
+				<string>Who said &quot;Great Scott!&quot;</string>
+				<key>type</key>
+				<string>text</string>
+			</dict>
+			<dict>
+				<key>prompt</key>
+				<string>Take a picture of something that looks like a Flux Capacitor.</string>
+				<key>type</key>
+				<string>image</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Ghostbusters</string>
+		<key>missions</key>
+		<array>
+			<dict>
+				<key>prompt</key>
+				<string>Find someone that has never seen any Ghostbusters movies. How old are they?</string>
+				<key>type</key>
+				<string>text</string>
+			</dict>
+			<dict>
+				<key>prompt</key>
+				<string>Take a picture with someone that hates marshmellows.</string>
+				<key>type</key>
+				<string>image</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Spiderman</string>
+		<key>missions</key>
+		<array>
+			<dict>
+				<key>prompt</key>
+				<string>Take a picture with someone that is arachnophobic.</string>
+				<key>type</key>
+				<string>image</string>
+			</dict>
+			<dict>
+				<key>prompt</key>
+				<string>Find someone that is afraid of heights. How old are they?</string>
+				<key>type</key>
+				<string>text</string>
+			</dict>
+			<dict>
+				<key>prompt</key>
+				<string>Get someone to finish this quote: &quot;With great power comes ...&quot; (they must say &quot;great responsibility&quot;)</string>
+				<key>type</key>
+				<string>audio</string>
+			</dict>
+			<dict>
+				<key>prompt</key>
+				<string>What does Peter Parker do to make money in the first movie?</string>
+				<key>type</key>
+				<string>text</string>
+			</dict>
+		</array>
+	</dict>
+</array>
+</plist>
