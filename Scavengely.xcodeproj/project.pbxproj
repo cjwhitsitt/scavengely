@@ -22,6 +22,9 @@
 		81D4F8BC197ACFA300272686 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81D4F8BA197ACFA300272686 /* InfoPlist.strings */; };
 		81D4F8BE197ACFA300272686 /* ScavengelyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D4F8BD197ACFA300272686 /* ScavengelyTests.m */; };
 		81D4F8C8197AD31000272686 /* games.plist in Resources */ = {isa = PBXBuildFile; fileRef = 81D4F8C7197AD31000272686 /* games.plist */; };
+		81D4F8D4197ADE2800272686 /* GameSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D4F8D3197ADE2800272686 /* GameSelectionViewController.m */; };
+		81D4F8D8197AE09400272686 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D4F8D7197AE09400272686 /* Game.m */; };
+		81D4F8DB197AE19600272686 /* Mission.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D4F8DA197AE19600272686 /* Mission.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,12 @@
 		81D4F8BB197ACFA300272686 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		81D4F8BD197ACFA300272686 /* ScavengelyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScavengelyTests.m; sourceTree = "<group>"; };
 		81D4F8C7197AD31000272686 /* games.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = games.plist; path = "Supporting Files/games.plist"; sourceTree = "<group>"; };
+		81D4F8D2197ADE2800272686 /* GameSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSelectionViewController.h; sourceTree = "<group>"; };
+		81D4F8D3197ADE2800272686 /* GameSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSelectionViewController.m; sourceTree = "<group>"; };
+		81D4F8D6197AE09400272686 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = Models/Game.h; sourceTree = "<group>"; };
+		81D4F8D7197AE09400272686 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Game.m; path = Models/Game.m; sourceTree = "<group>"; };
+		81D4F8D9197AE19600272686 /* Mission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Mission.h; path = Models/Mission.h; sourceTree = "<group>"; };
+		81D4F8DA197AE19600272686 /* Mission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Mission.m; path = Models/Mission.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,11 +123,14 @@
 		81D4F898197ACFA300272686 /* Scavengely */ = {
 			isa = PBXGroup;
 			children = (
+				81D4F8D5197AE07B00272686 /* Models */,
 				81D4F8A1197ACFA300272686 /* AppDelegate.h */,
 				81D4F8A2197ACFA300272686 /* AppDelegate.m */,
 				81D4F8A4197ACFA300272686 /* Main.storyboard */,
 				81D4F8A7197ACFA300272686 /* ViewController.h */,
 				81D4F8A8197ACFA300272686 /* ViewController.m */,
+				81D4F8D2197ADE2800272686 /* GameSelectionViewController.h */,
+				81D4F8D3197ADE2800272686 /* GameSelectionViewController.m */,
 				81D4F8AA197ACFA300272686 /* Images.xcassets */,
 				81D4F899197ACFA300272686 /* Supporting Files */,
 			);
@@ -153,6 +165,17 @@
 				81D4F8BA197ACFA300272686 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		81D4F8D5197AE07B00272686 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				81D4F8D6197AE09400272686 /* Game.h */,
+				81D4F8D7197AE09400272686 /* Game.m */,
+				81D4F8D9197AE19600272686 /* Mission.h */,
+				81D4F8DA197AE19600272686 /* Mission.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,9 +279,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81D4F8DB197AE19600272686 /* Mission.m in Sources */,
+				81D4F8D8197AE09400272686 /* Game.m in Sources */,
 				81D4F8A9197ACFA300272686 /* ViewController.m in Sources */,
 				81D4F8A3197ACFA300272686 /* AppDelegate.m in Sources */,
 				81D4F89F197ACFA300272686 /* main.m in Sources */,
+				81D4F8D4197ADE2800272686 /* GameSelectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

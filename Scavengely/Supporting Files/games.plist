@@ -3,6 +3,8 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>image</key>
+		<string>BackToTheFuture.png</string>
 		<key>name</key>
 		<string>Back to the Future</string>
 		<key>missions</key>
@@ -40,6 +42,8 @@
 		</array>
 	</dict>
 	<dict>
+		<key>image</key>
+		<string>Ghostbusters.png</string>
 		<key>name</key>
 		<string>Ghostbusters</string>
 		<key>missions</key>
@@ -59,6 +63,8 @@
 		</array>
 	</dict>
 	<dict>
+		<key>image</key>
+		<string>Spiderman.png</string>
 		<key>name</key>
 		<string>Spiderman</string>
 		<key>missions</key>
