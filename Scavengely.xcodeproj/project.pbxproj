@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0806C215197ADE4A003E7C6D /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0806C214197ADE4A003E7C6D /* ActivityViewController.m */; };
+		0806C218197ADEBA003E7C6D /* InvitesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0806C217197ADEBA003E7C6D /* InvitesViewController.m */; };
+		0806C21B197ADEE4003E7C6D /* NewGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0806C21A197ADEE4003E7C6D /* NewGameViewController.m */; };
+		0806C21F197AE00A003E7C6D /* cards-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0806C21E197AE00A003E7C6D /* cards-50@2x.png */; };
+		0806C221197AE00F003E7C6D /* inbox-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0806C220197AE00F003E7C6D /* inbox-50@2x.png */; };
+		0806C223197AE014003E7C6D /* news-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0806C222197AE014003E7C6D /* news-50@2x.png */; };
 		81D4F893197ACFA300272686 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D4F892197ACFA300272686 /* Foundation.framework */; };
 		81D4F895197ACFA300272686 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D4F894197ACFA300272686 /* CoreGraphics.framework */; };
 		81D4F897197ACFA300272686 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D4F896197ACFA300272686 /* UIKit.framework */; };
@@ -35,6 +41,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0806C213197ADE4A003E7C6D /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
+		0806C214197ADE4A003E7C6D /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
+		0806C216197ADEBA003E7C6D /* InvitesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvitesViewController.h; sourceTree = "<group>"; };
+		0806C217197ADEBA003E7C6D /* InvitesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvitesViewController.m; sourceTree = "<group>"; };
+		0806C219197ADEE4003E7C6D /* NewGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGameViewController.h; sourceTree = "<group>"; };
+		0806C21A197ADEE4003E7C6D /* NewGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewGameViewController.m; sourceTree = "<group>"; };
+		0806C21E197AE00A003E7C6D /* cards-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cards-50@2x.png"; path = "images/icons/cards/cards-50@2x.png"; sourceTree = "<group>"; };
+		0806C220197AE00F003E7C6D /* inbox-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "inbox-50@2x.png"; path = "images/icons/inbox/inbox-50@2x.png"; sourceTree = "<group>"; };
+		0806C222197AE014003E7C6D /* news-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "news-50@2x.png"; path = "images/icons/news/news-50@2x.png"; sourceTree = "<group>"; };
 		81D4F88F197ACFA300272686 /* Scavengely.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scavengely.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81D4F892197ACFA300272686 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		81D4F894197ACFA300272686 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -81,6 +96,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0806C21C197ADFFA003E7C6D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		0806C21D197ADFFE003E7C6D /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				0806C222197AE014003E7C6D /* news-50@2x.png */,
+				0806C220197AE00F003E7C6D /* inbox-50@2x.png */,
+				0806C21E197AE00A003E7C6D /* cards-50@2x.png */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
 		81D4F886197ACFA300272686 = {
 			isa = PBXGroup;
 			children = (
@@ -114,9 +146,17 @@
 		81D4F898197ACFA300272686 /* Scavengely */ = {
 			isa = PBXGroup;
 			children = (
+				0806C21D197ADFFE003E7C6D /* Icons */,
+				0806C21C197ADFFA003E7C6D /* Images */,
 				81D4F8A1197ACFA300272686 /* AppDelegate.h */,
 				81D4F8A2197ACFA300272686 /* AppDelegate.m */,
 				81D4F8A4197ACFA300272686 /* Main.storyboard */,
+				0806C216197ADEBA003E7C6D /* InvitesViewController.h */,
+				0806C217197ADEBA003E7C6D /* InvitesViewController.m */,
+				0806C219197ADEE4003E7C6D /* NewGameViewController.h */,
+				0806C21A197ADEE4003E7C6D /* NewGameViewController.m */,
+				0806C213197ADE4A003E7C6D /* ActivityViewController.h */,
+				0806C214197ADE4A003E7C6D /* ActivityViewController.m */,
 				81D4F8A7197ACFA300272686 /* ViewController.h */,
 				81D4F8A8197ACFA300272686 /* ViewController.m */,
 				81D4F8AA197ACFA300272686 /* Images.xcassets */,
@@ -236,7 +276,10 @@
 			files = (
 				81D4F8AB197ACFA300272686 /* Images.xcassets in Resources */,
 				81D4F89D197ACFA300272686 /* InfoPlist.strings in Resources */,
+				0806C223197AE014003E7C6D /* news-50@2x.png in Resources */,
+				0806C21F197AE00A003E7C6D /* cards-50@2x.png in Resources */,
 				81D4F8C8197AD31000272686 /* games.plist in Resources */,
+				0806C221197AE00F003E7C6D /* inbox-50@2x.png in Resources */,
 				81D4F8A6197ACFA300272686 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,8 +300,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				81D4F8A9197ACFA300272686 /* ViewController.m in Sources */,
+				0806C21B197ADEE4003E7C6D /* NewGameViewController.m in Sources */,
 				81D4F8A3197ACFA300272686 /* AppDelegate.m in Sources */,
 				81D4F89F197ACFA300272686 /* main.m in Sources */,
+				0806C215197ADE4A003E7C6D /* ActivityViewController.m in Sources */,
+				0806C218197ADEBA003E7C6D /* InvitesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
