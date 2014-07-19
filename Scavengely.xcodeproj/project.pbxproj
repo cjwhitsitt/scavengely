@@ -28,6 +28,8 @@
 		81D4F8BC197ACFA300272686 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81D4F8BA197ACFA300272686 /* InfoPlist.strings */; };
 		81D4F8BE197ACFA300272686 /* ScavengelyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D4F8BD197ACFA300272686 /* ScavengelyTests.m */; };
 		81D4F8C8197AD31000272686 /* games.plist in Resources */ = {isa = PBXBuildFile; fileRef = 81D4F8C7197AD31000272686 /* games.plist */; };
+		81D4F8E1197AED0200272686 /* Mission.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D4F8DF197AED0200272686 /* Mission.m */; };
+		81D4F8E2197AED0200272686 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D4F8E0197AED0200272686 /* Game.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,10 @@
 		81D4F8BB197ACFA300272686 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		81D4F8BD197ACFA300272686 /* ScavengelyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScavengelyTests.m; sourceTree = "<group>"; };
 		81D4F8C7197AD31000272686 /* games.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = games.plist; path = "Supporting Files/games.plist"; sourceTree = "<group>"; };
+		81D4F8DD197AED0200272686 /* Mission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Mission.h; path = Models/Mission.h; sourceTree = "<group>"; };
+		81D4F8DE197AED0200272686 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = Models/Game.h; sourceTree = "<group>"; };
+		81D4F8DF197AED0200272686 /* Mission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Mission.m; path = Models/Mission.m; sourceTree = "<group>"; };
+		81D4F8E0197AED0200272686 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Game.m; path = Models/Game.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +152,7 @@
 		81D4F898197ACFA300272686 /* Scavengely */ = {
 			isa = PBXGroup;
 			children = (
+				81D4F8DC197AECEB00272686 /* Models */,
 				0806C21D197ADFFE003E7C6D /* Icons */,
 				0806C21C197ADFFA003E7C6D /* Images */,
 				81D4F8A1197ACFA300272686 /* AppDelegate.h */,
@@ -193,6 +200,17 @@
 				81D4F8BA197ACFA300272686 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		81D4F8DC197AECEB00272686 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				81D4F8DD197AED0200272686 /* Mission.h */,
+				81D4F8DE197AED0200272686 /* Game.h */,
+				81D4F8DF197AED0200272686 /* Mission.m */,
+				81D4F8E0197AED0200272686 /* Game.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,8 +317,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81D4F8E1197AED0200272686 /* Mission.m in Sources */,
 				81D4F8A9197ACFA300272686 /* ViewController.m in Sources */,
 				0806C21B197ADEE4003E7C6D /* NewGameViewController.m in Sources */,
+				81D4F8E2197AED0200272686 /* Game.m in Sources */,
 				81D4F8A3197ACFA300272686 /* AppDelegate.m in Sources */,
 				81D4F89F197ACFA300272686 /* main.m in Sources */,
 				0806C215197ADE4A003E7C6D /* ActivityViewController.m in Sources */,
