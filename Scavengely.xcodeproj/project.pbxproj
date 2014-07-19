@@ -34,6 +34,10 @@
 		81D4F8E2197AED0200272686 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D4F8E0197AED0200272686 /* Game.m */; };
 		81D4F8E6197AEFD100272686 /* GameSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D4F8E4197AEFD100272686 /* GameSelectionViewController.m */; };
 		81D4F8ED197AF8D000272686 /* GameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D4F8EC197AF8D000272686 /* GameTableViewCell.m */; };
+		81D4F8EF197B1D0000272686 /* BackToTheFuture.png in Resources */ = {isa = PBXBuildFile; fileRef = 81D4F8EE197B1D0000272686 /* BackToTheFuture.png */; };
+		81D4F8F1197B1D7F00272686 /* Ghostbusters.png in Resources */ = {isa = PBXBuildFile; fileRef = 81D4F8F0197B1D7F00272686 /* Ghostbusters.png */; };
+		81D4F8F3197B1DB500272686 /* Spiderman.png in Resources */ = {isa = PBXBuildFile; fileRef = 81D4F8F2197B1DB500272686 /* Spiderman.png */; };
+		81D4F8F6197B26C400272686 /* GameStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D4F8F5197B26C400272686 /* GameStartViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +90,11 @@
 		81D4F8E5197AEFD100272686 /* GameSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSelectionViewController.h; sourceTree = "<group>"; };
 		81D4F8EB197AF8D000272686 /* GameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTableViewCell.h; sourceTree = "<group>"; };
 		81D4F8EC197AF8D000272686 /* GameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTableViewCell.m; sourceTree = "<group>"; };
+		81D4F8EE197B1D0000272686 /* BackToTheFuture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackToTheFuture.png; sourceTree = "<group>"; };
+		81D4F8F0197B1D7F00272686 /* Ghostbusters.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ghostbusters.png; sourceTree = "<group>"; };
+		81D4F8F2197B1DB500272686 /* Spiderman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spiderman.png; sourceTree = "<group>"; };
+		81D4F8F4197B26C400272686 /* GameStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStartViewController.h; sourceTree = "<group>"; };
+		81D4F8F5197B26C400272686 /* GameStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameStartViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +125,9 @@
 		0806C21C197ADFFA003E7C6D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				81D4F8F2197B1DB500272686 /* Spiderman.png */,
+				81D4F8F0197B1D7F00272686 /* Ghostbusters.png */,
+				81D4F8EE197B1D0000272686 /* BackToTheFuture.png */,
 				0806C22A197B082F003E7C6D /* default.PNG */,
 			);
 			name = Images;
@@ -242,6 +254,8 @@
 				81D4F8E4197AEFD100272686 /* GameSelectionViewController.m */,
 				81D4F8EB197AF8D000272686 /* GameTableViewCell.h */,
 				81D4F8EC197AF8D000272686 /* GameTableViewCell.m */,
+				81D4F8F4197B26C400272686 /* GameStartViewController.h */,
+				81D4F8F5197B26C400272686 /* GameStartViewController.m */,
 			);
 			name = "Game Selection";
 			sourceTree = "<group>";
@@ -327,12 +341,15 @@
 			files = (
 				81D4F8AB197ACFA300272686 /* Images.xcassets in Resources */,
 				81D4F89D197ACFA300272686 /* InfoPlist.strings in Resources */,
+				81D4F8F1197B1D7F00272686 /* Ghostbusters.png in Resources */,
 				0806C223197AE014003E7C6D /* news-50@2x.png in Resources */,
 				0806C22B197B082F003E7C6D /* default.PNG in Resources */,
 				0806C21F197AE00A003E7C6D /* cards-50@2x.png in Resources */,
+				81D4F8EF197B1D0000272686 /* BackToTheFuture.png in Resources */,
 				81D4F8C8197AD31000272686 /* games.plist in Resources */,
 				0806C221197AE00F003E7C6D /* inbox-50@2x.png in Resources */,
 				81D4F8A6197ACFA300272686 /* Main.storyboard in Resources */,
+				81D4F8F3197B1DB500272686 /* Spiderman.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +373,7 @@
 				0806C21B197ADEE4003E7C6D /* NewGameViewController.m in Sources */,
 				81D4F8ED197AF8D000272686 /* GameTableViewCell.m in Sources */,
 				81D4F8E2197AED0200272686 /* Game.m in Sources */,
+				81D4F8F6197B26C400272686 /* GameStartViewController.m in Sources */,
 				81D4F8A3197ACFA300272686 /* AppDelegate.m in Sources */,
 				81D4F89F197ACFA300272686 /* main.m in Sources */,
 				0806C215197ADE4A003E7C6D /* ActivityViewController.m in Sources */,

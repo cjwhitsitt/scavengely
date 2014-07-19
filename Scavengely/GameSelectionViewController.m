@@ -29,28 +29,26 @@
         Game *newGame = [[Game alloc] init];
         
         id gameName = [rawGame objectForKey:@"name"];
-        NSAssert(![gameName isKindOfClass:[NSString class]], @"The name of a game from the plist is not a string");
+        NSAssert(![gameName isMemberOfClass:[NSString class]], @"The name of a game from the plist is not a string");
         newGame.name = (NSString *)gameName;
         
         id imageFileName = [rawGame objectForKey:@"image"];
-        NSAssert1(![imageFileName isKindOfClass:[NSString class]], @"The filename for game \"%@\" isn't a string.", gameName);
+        NSAssert1(![imageFileName isMemberOfClass:[NSString class]], @"The filename for game \"%@\" isn't a string.", gameName);
         NSString *imageNameWithoutExt = nil;
         NSString *imageExt = nil;
-        NSRange lastHadRange = [imageFileName rangeOfString:@"had" options:NSBackwardsSearch];
-        if (lastHadRange.location != NSNotFound) {
-            NSRange lastPeriodRange = [imageNameWithoutExt rangeOfString:@"." options:NSBackwardsSearch];
-            if (lastPeriodRange.location != NSNotFound) {
-                NSUInteger start = lastHadRange.location + lastHadRange.length;
-                NSUInteger length = lastPeriodRange.location - start;
-                imageNameWithoutExt = [imageFileName substringWithRange:NSMakeRange(start, length)];
-                imageExt = [imageFileName substringWithRange:NSMakeRange(length+1, [imageFileName length])];
-            }
+        NSRange lastPeriodRange = [imageFileName rangeOfString:@"." options:NSBackwardsSearch];
+        if (lastPeriodRange.location != NSNotFound) {
+            NSUInteger start = 0;
+            NSUInteger length = lastPeriodRange.location - start;
+            NSUInteger end = [imageFileName length]-1;
+            imageNameWithoutExt = [imageFileName substringWithRange:NSMakeRange(start, length)];
+            imageExt = [imageFileName substringWithRange:NSMakeRange(length+1, end-length)];
         }
         NSString *imagePath = [[NSBundle mainBundle] pathForResource:imageNameWithoutExt  ofType:imageExt];
         newGame.image = [UIImage imageWithContentsOfFile:imagePath];
         
         id rawMissions = [rawGame objectForKey:@"missions"];
-        NSAssert1(![rawMissions isKindOfClass:[NSArray class]], @"The missions for game \"%@\" aren't formatted as an array.", gameName);
+        NSAssert1(![rawMissions isMemberOfClass:[NSArray class]], @"The missions for game \"%@\" aren't formatted as an array.", gameName);
         NSMutableArray *missions = [[NSMutableArray alloc] init];
         
         int i = 0;
@@ -59,18 +57,22 @@
             newMission.number = i;
             
             id missionPrompt = [rawMission objectForKey:@"prompt"];
-            NSAssert2(![missionPrompt isKindOfClass:[NSString class]], @"Invalid prompt name for #%d, game %@", i, gameName);
+            NSAssert2(![missionPrompt isMemberOfClass:[NSString class]], @"Invalid prompt name for #%d, game %@", i, gameName);
             newMission.prompt = (NSString *)missionPrompt;
             
             id missionType = [rawMission objectForKey:@"type"];
-            NSAssert2(![missionPrompt isKindOfClass:[NSString class]], @"Invalid prompt type for #%d, game %@", i, gameName);
+            NSAssert2(![missionPrompt isMemberOfClass:[NSString class]], @"Invalid prompt type for #%d, game %@", i, gameName);
             newMission.type = (NSString *)missionType;
             
             [missions addObject:newMission];
         }
         
+        newGame.missions = missions;
+        
         [massagedGameData addObject:newGame];
     }
+    
+    self.gameData = massagedGameData;
 }
 
 #pragma mark UIViewController methods
@@ -85,7 +87,8 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
-    [self.navigationController setNavigationBarHidden:NO];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:NO];
 }
 
 - (void)viewDidLoad
@@ -134,14 +137,16 @@
     
     // put data in cell outlets
     GameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"gameCell"];
-    [cell.title setText:game.title];
+    [cell.title setText:game.name];
     NSString *numberOfMissions = [NSString stringWithFormat:@"%lu", (unsigned long)[game.missions count]];
-    [cell.numberOfMissions setText:numberOfMissions];
-    //cell.imageView.image = game.image;
+    [cell.numberOfMissions setText:[NSString stringWithFormat:@"%@ missions", numberOfMissions]];
+    cell.imageView.image = game.image;
     
     return cell;
 };
 
 #pragma mark UITableViewDelegate methods
+
+
 
 @end

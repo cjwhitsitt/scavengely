@@ -25,6 +25,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+#warning This will force the Solo option
+    [self performSegueWithIdentifier:@"gameSelectionSegue" sender:self];
 }
 
 - (void)didReceiveMemoryWarning
