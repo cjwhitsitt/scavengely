@@ -199,6 +199,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Jay Whitsitt";
 				TargetAttributes = {
+					81D4F88E197ACFA300272686 = {
+						DevelopmentTeam = QLJ7J46XRH;
+					};
 					81D4F8AF197ACFA300272686 = {
 						TestTargetID = 81D4F88E197ACFA300272686;
 					};
@@ -376,6 +379,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Scavengely/Scavengely-Prefix.pch";
 				INFOPLIST_FILE = "Scavengely/Scavengely-Info.plist";
@@ -389,6 +393,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Scavengely/Scavengely-Prefix.pch";
 				INFOPLIST_FILE = "Scavengely/Scavengely-Info.plist";
@@ -456,6 +461,7 @@
 				81D4F8C3197ACFA300272686 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		81D4F8C4197ACFA300272686 /* Build configuration list for PBXNativeTarget "ScavengelyTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +470,7 @@
 				81D4F8C6197ACFA300272686 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -14,6 +14,13 @@
 
 @implementation ViewController
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
+    [self.navigationController setNavigationBarHidden:YES];
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
