@@ -15,7 +15,6 @@
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *friendNameLabel;
-@property (strong, nonatomic) FBFriendPickerViewController *friendPickerController;
 
 - (IBAction)startButtonPressed:(UIButton *)sender;
 
