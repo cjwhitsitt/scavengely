@@ -134,7 +134,7 @@
     
     // put data in cell outlets
     GameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"gameCell"];
-    [cell.title setText:game.title];
+    //[cell.title setText:game.title];
     NSString *numberOfMissions = [NSString stringWithFormat:@"%lu", (unsigned long)[game.missions count]];
     [cell.numberOfMissions setText:numberOfMissions];
     //cell.imageView.image = game.image;
