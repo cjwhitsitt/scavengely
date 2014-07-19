@@ -38,6 +38,8 @@
 		81D4F8F1197B1D7F00272686 /* Ghostbusters.png in Resources */ = {isa = PBXBuildFile; fileRef = 81D4F8F0197B1D7F00272686 /* Ghostbusters.png */; };
 		81D4F8F3197B1DB500272686 /* Spiderman.png in Resources */ = {isa = PBXBuildFile; fileRef = 81D4F8F2197B1DB500272686 /* Spiderman.png */; };
 		81D4F8F6197B26C400272686 /* GameStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D4F8F5197B26C400272686 /* GameStartViewController.m */; };
+		81D4F8F9197B33A400272686 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D4F8F8197B33A400272686 /* Player.m */; };
+		81D4F8FC197B348D00272686 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D4F8FB197B348D00272686 /* GameScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,10 @@
 		81D4F8F2197B1DB500272686 /* Spiderman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spiderman.png; sourceTree = "<group>"; };
 		81D4F8F4197B26C400272686 /* GameStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStartViewController.h; sourceTree = "<group>"; };
 		81D4F8F5197B26C400272686 /* GameStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameStartViewController.m; sourceTree = "<group>"; };
+		81D4F8F7197B33A400272686 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = Models/Player.h; sourceTree = "<group>"; };
+		81D4F8F8197B33A400272686 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Player.m; path = Models/Player.m; sourceTree = "<group>"; };
+		81D4F8FA197B348D00272686 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = Models/GameScene.h; sourceTree = "<group>"; };
+		81D4F8FB197B348D00272686 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameScene.m; path = Models/GameScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +242,10 @@
 				81D4F8E0197AED0200272686 /* Game.m */,
 				81D4F8DD197AED0200272686 /* Mission.h */,
 				81D4F8DF197AED0200272686 /* Mission.m */,
+				81D4F8F7197B33A400272686 /* Player.h */,
+				81D4F8F8197B33A400272686 /* Player.m */,
+				81D4F8FA197B348D00272686 /* GameScene.h */,
+				81D4F8FB197B348D00272686 /* GameScene.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -372,11 +382,13 @@
 				81D4F8A9197ACFA300272686 /* ViewController.m in Sources */,
 				0806C21B197ADEE4003E7C6D /* NewGameViewController.m in Sources */,
 				81D4F8ED197AF8D000272686 /* GameTableViewCell.m in Sources */,
+				81D4F8F9197B33A400272686 /* Player.m in Sources */,
 				81D4F8E2197AED0200272686 /* Game.m in Sources */,
 				81D4F8F6197B26C400272686 /* GameStartViewController.m in Sources */,
 				81D4F8A3197ACFA300272686 /* AppDelegate.m in Sources */,
 				81D4F89F197ACFA300272686 /* main.m in Sources */,
 				0806C215197ADE4A003E7C6D /* ActivityViewController.m in Sources */,
+				81D4F8FC197B348D00272686 /* GameScene.m in Sources */,
 				81D4F8E6197AEFD100272686 /* GameSelectionViewController.m in Sources */,
 				0806C218197ADEBA003E7C6D /* InvitesViewController.m in Sources */,
 			);

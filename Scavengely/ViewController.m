@@ -6,7 +6,11 @@
 //  Copyright (c) 2014 Jay Whitsitt. All rights reserved.
 //
 
+#import "AppDelegate.h"
+
 #import "ViewController.h"
+
+#import "GameScene.h"
 
 @interface ViewController ()
 
@@ -14,13 +18,12 @@
 
 @implementation ViewController
 
--(void)viewWillAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
     [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     
 }
-
 
 - (void)viewDidLoad
 {
@@ -29,6 +32,23 @@
     
 #warning This will force the Solo option
     [self performSegueWithIdentifier:@"gameSelectionSegue" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"gameSelectionSegue"]) {
+        
+        // initialize app delegate's game scene
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        GameScene *gameScene = appDelegate.gameScene;
+        gameScene = [[GameScene alloc] init];
+        
+        Player *player = [[Player alloc] init];
+        player.name = @"Me";
+        gameScene.players = [NSArray arrayWithObject:player];
+        
+        gameScene.gameOption = gameOptionSolo;
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning

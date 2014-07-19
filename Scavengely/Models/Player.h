@@ -10,4 +10,7 @@
 
 @interface Player : NSObject
 
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *facebookID;
+
 @end

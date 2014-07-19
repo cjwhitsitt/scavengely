@@ -98,9 +98,6 @@
     
     // load data
 	[self loadDataFromPlistToObject];
-    
-    // display in table view
-    
 }
 
 - (void)didReceiveMemoryWarning
