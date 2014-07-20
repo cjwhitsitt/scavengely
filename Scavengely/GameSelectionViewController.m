@@ -10,6 +10,8 @@
 #import "GameTableViewCell.h"
 #import "GameStartViewController.h"
 
+#import "AppDelegate.h"
+
 #import "Game.h"
 #import "Mission.h"
 

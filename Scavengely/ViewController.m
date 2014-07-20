@@ -7,8 +7,9 @@
 //
 
 #import "AppDelegate.h"
-
 #import "ViewController.h"
+#import "GameScene.h"
+#import "GameSelectionViewController.h"
 
 @interface ViewController ()
 
@@ -43,6 +44,8 @@
         gameScene.players = [NSArray arrayWithObject:player];
         
         gameScene.gameOption = gameOptionSolo;
+        
+        
         
     }
 }

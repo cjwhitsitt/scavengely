@@ -7,6 +7,7 @@
 //
 
 #import "NewGameViewController.h"
+#import "AppDelegate.h"
 
 @interface NewGameViewController ()
 @property (retain, nonatomic) FBFriendPickerViewController *friendPickerController;
@@ -22,12 +23,24 @@
 
 }
 
+- (void)viewDidLoad
+{
+    [self checkOpenSession];
+    //[self checkSession];
+    
+    [self.navigationController setNavigationBarHidden:NO];
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+}
+
 - (void)viewDidUnload {
     self.friendPickerController = nil;
     
     [super viewDidUnload];
 }
 
+
+#pragma mark - Open Facebook Session
 -(void)checkOpenSession
 {
     // if the session is open, then load the data for our view controller
@@ -75,38 +88,6 @@
 
 }
 
--(void)friendsPopup
-{
-    NSLog(@"here");
-
-    
-    if (FBSessionStateOpen == YES) {
-        NSLog(@"session open");
-    }else{
-        NSLog(@"session not open");
-    }
-
-
-}
-
--(void)checkSession
-{
-
-
-}
-
-- (void)viewDidLoad
-{
-    [self checkOpenSession];
-    //[self checkSession];
-    
-
-    
-    
-    [self.navigationController setNavigationBarHidden:NO];
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
 
 - (void)facebookViewControllerCancelWasPressed:(id)sender {
     [self dismissViewControllerAnimated:YES completion:NULL];
@@ -134,40 +115,59 @@
 }
 
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    GameScene *gameScene = appDelegate.gameScene;
+    gameScene = [[GameScene alloc] init];
+    
+    Player *player = [[Player alloc] init];
+    player.name = @"Me";
+    
+    Player *player2 = [[Player alloc]init];
+    player2.name = [self.friendPickerController.selection valueForKey:@"name"];
+    player2.facebookID = [self.friendPickerController.selection valueForKey:@"id"];
+    
+    gameScene.players = [NSArray arrayWithObjects:player, player2, nil];
+    NSLog(@"%@, %@", player2.name, player2.facebookID);
+    NSLog(@"%@", gameScene.players);
+
+    appDelegate.gameScene = gameScene;
 }
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 
 - (IBAction)startButtonPressed:(UIButton *)sender {
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @end
