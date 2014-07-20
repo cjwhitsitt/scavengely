@@ -15,6 +15,7 @@
 		0806C223197AE014003E7C6D /* news-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0806C222197AE014003E7C6D /* news-50@2x.png */; };
 		0806C227197AEDCE003E7C6D /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0806C226197AEDCE003E7C6D /* FacebookSDK.framework */; };
 		0806C22B197B082F003E7C6D /* default.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 0806C22A197B082F003E7C6D /* default.PNG */; };
+		08A91B09197B580800CA7095 /* MissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A91B08197B580800CA7095 /* MissionViewController.m */; };
 		81D4F893197ACFA300272686 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D4F892197ACFA300272686 /* Foundation.framework */; };
 		81D4F895197ACFA300272686 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D4F894197ACFA300272686 /* CoreGraphics.framework */; };
 		81D4F897197ACFA300272686 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D4F896197ACFA300272686 /* UIKit.framework */; };
@@ -64,6 +65,8 @@
 		0806C222197AE014003E7C6D /* news-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "news-50@2x.png"; path = "images/icons/news/news-50@2x.png"; sourceTree = "<group>"; };
 		0806C226197AEDCE003E7C6D /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		0806C22A197B082F003E7C6D /* default.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = default.PNG; path = images/default.PNG; sourceTree = "<group>"; };
+		08A91B07197B580800CA7095 /* MissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MissionViewController.h; sourceTree = "<group>"; };
+		08A91B08197B580800CA7095 /* MissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MissionViewController.m; sourceTree = "<group>"; };
 		81D4F88F197ACFA300272686 /* Scavengely.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scavengely.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81D4F892197ACFA300272686 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		81D4F894197ACFA300272686 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -191,6 +194,8 @@
 				81D4F8A1197ACFA300272686 /* AppDelegate.h */,
 				81D4F8A2197ACFA300272686 /* AppDelegate.m */,
 				81D4F8A4197ACFA300272686 /* Main.storyboard */,
+				08A91B07197B580800CA7095 /* MissionViewController.h */,
+				08A91B08197B580800CA7095 /* MissionViewController.m */,
 				0806C216197ADEBA003E7C6D /* InvitesViewController.h */,
 				0806C217197ADEBA003E7C6D /* InvitesViewController.m */,
 				0806C219197ADEE4003E7C6D /* NewGameViewController.h */,
@@ -383,6 +388,7 @@
 				0806C21B197ADEE4003E7C6D /* NewGameViewController.m in Sources */,
 				81D4F8ED197AF8D000272686 /* GameTableViewCell.m in Sources */,
 				81D4F8F9197B33A400272686 /* Player.m in Sources */,
+				08A91B09197B580800CA7095 /* MissionViewController.m in Sources */,
 				81D4F8E2197AED0200272686 /* Game.m in Sources */,
 				81D4F8F6197B26C400272686 /* GameStartViewController.m in Sources */,
 				81D4F8A3197ACFA300272686 /* AppDelegate.m in Sources */,
