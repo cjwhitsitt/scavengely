@@ -32,7 +32,10 @@
     
     if (self.currentMission != nil) {
         self.missionImage.image = self.currentMission.image;
+        
         [self.missionPrompt setText:self.currentMission.prompt];
+        [self.missionPrompt sizeToFit];
+        
         if (self.currentMission.type == MissionTypeImage) {
             self.pictureButton.hidden = NO;
             self.micButton.hidden = YES;
@@ -42,6 +45,7 @@
         } else {
             NSLog(@"Uh oh, a mission has a bad type:\n%@", self.currentMission.prompt);
         }
+        
         self.title = [NSString stringWithFormat:@"Mission %d", self.currentMission.number];
     }
 }
