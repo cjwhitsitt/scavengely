@@ -392,6 +392,21 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFO-nt-Rf0">
+                                <rect key="frame" x="0.0" y="409" width="320" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.47206419710000003" green="0.52226233479999995" blue="0.64307487009999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="P4Q-dh-aGq"/>
+                                </constraints>
+                                <state key="normal" image="mic-75.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="uaw-fT-GsT" kind="push" identifier="toAudioView" id="8Y4-be-fBe"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mission prompt goes here!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="vTc-KE-ymy">
                                 <rect key="frame" x="20" y="228" width="280" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -420,21 +435,6 @@
                                 </state>
                                 <connections>
                                     <segue destination="cR4-eT-tk2" kind="push" identifier="toPictureView" id="PsS-5w-ZCL"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFO-nt-Rf0">
-                                <rect key="frame" x="0.0" y="409" width="320" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.47206419710000003" green="0.52226233479999995" blue="0.64307487009999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="P4Q-dh-aGq"/>
-                                </constraints>
-                                <state key="normal" image="mic-75.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="uaw-fT-GsT" kind="push" identifier="toAudioView" id="8Y4-be-fBe"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -466,10 +466,10 @@
             </objects>
             <point key="canvasLocation" x="2485" y="414"/>
         </scene>
-        <!--View Controller-->
+        <!--Audio Capture View Controller-->
         <scene sceneID="FI8-ak-FyY">
             <objects>
-                <viewController id="cR4-eT-tk2" sceneMemberID="viewController">
+                <viewController id="cR4-eT-tk2" customClass="AudioCaptureViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="woG-BZ-YOr"/>
                         <viewControllerLayoutGuide type="bottom" id="9i0-3h-xPV"/>
@@ -477,9 +477,32 @@
                     <view key="view" contentMode="scaleToFill" id="xv1-8x-MjQ">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXF-QE-5qk">
+                                <rect key="frame" x="0.0" y="409" width="320" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.47206419710000003" green="0.52226233479999995" blue="0.64307487009999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="5uJ-Uu-dPv"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="75" id="bBj-6I-UE7"/>
+                                </constraints>
+                                <state key="normal" image="camera-75.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="EXF-QE-5qk" secondAttribute="trailing" id="FQt-vs-0gC"/>
+                            <constraint firstItem="EXF-QE-5qk" firstAttribute="leading" secondItem="xv1-8x-MjQ" secondAttribute="leading" id="cww-8K-ePX"/>
+                            <constraint firstItem="9i0-3h-xPV" firstAttribute="top" secondItem="EXF-QE-5qk" secondAttribute="bottom" constant="20" id="swT-5s-7F0"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ial-m7-7x6"/>
+                    <connections>
+                        <outlet property="imageCaptureButton" destination="EXF-QE-5qk" id="jBt-4N-CXg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PEd-RY-aGg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
