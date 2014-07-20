@@ -28,56 +28,17 @@
     [self checkOpenSession];
     //[self checkSession];
     // Create request for user's Facebook data
-    FBRequest *request = [FBRequest requestForMe];
-    
-    // Send request to Facebook
-    [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-        // handle response
-    }];
-    
-    // Login PFUser using Facebook
-    NSArray *permissionsArray = @[ @"user_about_me", @"user_relationships", @"user_birthday", @"user_location"];
-    [PFFacebookUtils initializeFacebook];
-    [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
-        
-        if (!user) {
-            if (!error) {
-                NSLog(@"Uh oh. The user cancelled the Facebook login.");
-            } else {
-                NSLog(@"Uh oh. An error occurred: %@", error);
-            }
-        } else if (user.isNew) {
-            NSLog(@"User with facebook signed up and logged in!");
-            //[self.navigationController pushViewController:[[UserDetailsViewController alloc] initWithStyle:UITableViewStyleGrouped] animated:YES];
-        } else {
-            NSLog(@"User with facebook logged in!");
-            //[self.navigationController pushViewController:[[UserDetailsViewController alloc] initWithStyle:UITableViewStyleGrouped] animated:YES];
-        }
-    }];
-    
-    
-    [[PFInstallation currentInstallation] setObject:[PFUser currentUser] forKey:@"user"];
-    [[PFInstallation currentInstallation] saveEventually];
-    
-    // Build a query to match users with a birthday today
-    PFQuery *innerQuery = [PFUser query];
-    
-    // Use hasPrefix: to only match against the month/date
 
-    [innerQuery whereKey:@"birthday" hasPrefix:@"08/15"];
     
-    // Build the actual push notification target query
-    PFQuery *query = [PFInstallation query];
+
     
-    // only return Installations that belong to a User that
-    // matches the innerQuery
-    [query whereKey:@"user" matchesQuery:innerQuery];
     
+
     // Send the notification.
-    PFPush *push = [[PFPush alloc] init];
-    [push setQuery:query];
-    [push setMessage:@"Happy Birthday!"];
-    [push sendPushInBackground];
+//    PFPush *push = [[PFPush alloc] init];
+//    [push setQuery:query];
+//    [push setMessage:@"IT WORKSSSS!!!!!"];
+//    [push sendPushInBackground];
     
     [self.navigationController setNavigationBarHidden:NO];
     [super viewDidLoad];
@@ -120,6 +81,14 @@
     }
     
 
+    NSLog(@"boooom");
+    PFQuery *pushQuery = [PFInstallation query];
+    [pushQuery whereKey:@"objectId" equalTo:@"O2YOmxrlU7"];
+    
+    // Send push notification to query
+    [PFPush sendPushMessageToQueryInBackground:pushQuery
+                                   withMessage:@"Testing some pushes lol"];
+    
 
     if (self.friendPickerController == nil) {
         NSLog(@"picker is nil");

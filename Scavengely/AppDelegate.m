@@ -14,19 +14,30 @@
 {
     // Register for push notifications
     NSLog(@"didfinishlaunching");
+    [Parse setApplicationId:@"QtMQ4eXXorgoEipdJBo5iTmQBqkMSMRygwJ9EkDk"
+                  clientKey:@"MX4jxdFnCiXFmkT5NBOoZaMILSmmJX9pgJZRMbPy"];
+    
+    
+
     [application registerForRemoteNotificationTypes:
      UIRemoteNotificationTypeBadge |
      UIRemoteNotificationTypeAlert |
      UIRemoteNotificationTypeSound];
-    
-    [Parse setApplicationId:@"QtMQ4eXXorgoEipdJBo5iTmQBqkMSMRygwJ9EkDk"
-                  clientKey:@"MX4jxdFnCiXFmkT5NBOoZaMILSmmJX9pgJZRMbPy"];
-    
 
+//    [application registerForRemoteNotificationTypes:
+//     UIRemoteNotificationTypeBadge |
+//     UIRemoteNotificationTypeAlert |
+//     UIRemoteNotificationTypeSound];
+//    
 
     
     // Override point for customization after application launch.
     return YES;
+}
+
+-(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    NSLog(@"failed: %@", error);
 }
 
 -(BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
@@ -45,14 +56,15 @@
 
 
 
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
-{
+- (void)application:(UIApplication *)application
+didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)newDeviceToken {
     // Store the deviceToken in the current installation and save it to Parse.
-    NSLog(@"didregister");
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
-    [currentInstallation setDeviceTokenFromData:deviceToken];
+    [currentInstallation setDeviceTokenFromData:newDeviceToken];
     [currentInstallation saveInBackground];
 }
+
+
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     [PFPush handlePush:userInfo];
@@ -79,6 +91,9 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
+    
+
+   
 
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }

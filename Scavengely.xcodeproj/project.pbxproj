@@ -22,7 +22,6 @@
 		08626321197B701C004A3AD9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08626320197B701C004A3AD9 /* MobileCoreServices.framework */; };
 		08626323197B7027004A3AD9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08626322197B7027004A3AD9 /* QuartzCore.framework */; };
 		08626325197B702F004A3AD9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08626324197B702F004A3AD9 /* Security.framework */; };
-		08626327197B7035004A3AD9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08626326197B7035004A3AD9 /* StoreKit.framework */; };
 		08626329197B703E004A3AD9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08626328197B703E004A3AD9 /* SystemConfiguration.framework */; };
 		08A91B09197B580800CA7095 /* MissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A91B08197B580800CA7095 /* MissionViewController.m */; };
 		08A91B1E197B5BF600CA7095 /* camera-75@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 08A91B1C197B5BF600CA7095 /* camera-75@2x.png */; };
@@ -84,7 +83,6 @@
 		08626320197B701C004A3AD9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		08626322197B7027004A3AD9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		08626324197B702F004A3AD9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		08626326197B7035004A3AD9 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		08626328197B703E004A3AD9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		08A91B07197B580800CA7095 /* MissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MissionViewController.h; sourceTree = "<group>"; };
 		08A91B08197B580800CA7095 /* MissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MissionViewController.m; sourceTree = "<group>"; };
@@ -136,7 +134,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				08626329197B703E004A3AD9 /* SystemConfiguration.framework in Frameworks */,
-				08626327197B7035004A3AD9 /* StoreKit.framework in Frameworks */,
 				08626325197B702F004A3AD9 /* Security.framework in Frameworks */,
 				08626323197B7027004A3AD9 /* QuartzCore.framework in Frameworks */,
 				08626321197B701C004A3AD9 /* MobileCoreServices.framework in Frameworks */,
@@ -211,7 +208,6 @@
 			isa = PBXGroup;
 			children = (
 				08626328197B703E004A3AD9 /* SystemConfiguration.framework */,
-				08626326197B7035004A3AD9 /* StoreKit.framework */,
 				08626324197B702F004A3AD9 /* Security.framework */,
 				08626322197B7027004A3AD9 /* QuartzCore.framework */,
 				08626320197B701C004A3AD9 /* MobileCoreServices.framework */,
@@ -371,6 +367,11 @@
 				TargetAttributes = {
 					81D4F88E197ACFA300272686 = {
 						DevelopmentTeam = QLJ7J46XRH;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 					81D4F8AF197ACFA300272686 = {
 						TestTargetID = 81D4F88E197ACFA300272686;
@@ -527,7 +528,6 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -565,7 +565,6 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -586,7 +585,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Steven Palomino (3V7LVD3A66)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -596,7 +595,7 @@
 				GCC_PREFIX_HEADER = "Scavengely/Scavengely-Prefix.pch";
 				INFOPLIST_FILE = "Scavengely/Scavengely-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "B32B72B5-4922-4E42-AAE7-33438EEA14B9";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -606,7 +605,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Steven Palomino (3V7LVD3A66)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -616,7 +615,7 @@
 				GCC_PREFIX_HEADER = "Scavengely/Scavengely-Prefix.pch";
 				INFOPLIST_FILE = "Scavengely/Scavengely-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "B32B72B5-4922-4E42-AAE7-33438EEA14B9";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
