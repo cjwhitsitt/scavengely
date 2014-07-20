@@ -17,7 +17,7 @@
 
 @interface GameSelectionViewController ()
 
-@property (strong, nonatomic) NSArray *gameData;
+@property (strong, readonly, nonatomic) NSArray *gameData;
 @property (strong, readonly, nonatomic) Game *selectedGame;
 
 @end
@@ -61,12 +61,20 @@
             newMission.number = i;
             
             id missionPrompt = [rawMission objectForKey:@"prompt"];
-            NSAssert2(![missionPrompt isMemberOfClass:[NSString class]], @"Invalid prompt name for #%d, game %@", i, gameName);
+            NSAssert2(![missionPrompt isMemberOfClass:[NSString class]], @"Invalid prompt for mission #%d, game %@", i, gameName);
             newMission.prompt = (NSString *)missionPrompt;
             
-            id missionType = [rawMission objectForKey:@"type"];
-            NSAssert2(![missionPrompt isMemberOfClass:[NSString class]], @"Invalid prompt type for #%d, game %@", i, gameName);
-            newMission.type = (NSString *)missionType;
+            id missionTypeId = [rawMission objectForKey:@"type"];
+            
+            NSAssert2(![missionTypeId isMemberOfClass:[NSString class]], @"Invalid prompt type for #%d, game %@", i, gameName);
+            NSString *missionTypeString = (NSString *)missionTypeId;
+            if ([missionTypeString isEqualToString:@"image"]) {
+                newMission.type = MissionTypeImage;
+            } else if ([missionTypeString isEqualToString:@"audio"]) {
+                newMission.type = MissionTypeAudio;
+            } else {
+                NSLog(@"Invalid mission type (\"%@\") for mission #%d, game %@", missionTypeString, i, gameName);
+            }
             
             [missions addObject:newMission];
         }
@@ -76,7 +84,7 @@
         [massagedGameData addObject:newGame];
     }
     
-    self.gameData = massagedGameData;
+    _gameData = massagedGameData;
 }
 
 #pragma mark UIViewController methods
@@ -101,7 +109,9 @@
     // Do any additional setup after loading the view.
     
     // load data
-	[self loadDataFromPlistToObject];
+	if (self.gameData == nil) {
+        [self loadDataFromPlistToObject];
+    }
 }
 
 - (void)didReceiveMemoryWarning
