@@ -53,6 +53,7 @@
 		81D4F8F6197B26C400272686 /* GameStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D4F8F5197B26C400272686 /* GameStartViewController.m */; };
 		81D4F8F9197B33A400272686 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D4F8F8197B33A400272686 /* Player.m */; };
 		81D4F8FC197B348D00272686 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D4F8FB197B348D00272686 /* GameScene.m */; };
+		81D4F905197B7F0F00272686 /* AudioCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D4F904197B7F0F00272686 /* AudioCaptureViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,8 @@
 		81D4F8F8197B33A400272686 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Player.m; path = Models/Player.m; sourceTree = "<group>"; };
 		81D4F8FA197B348D00272686 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = Models/GameScene.h; sourceTree = "<group>"; };
 		81D4F8FB197B348D00272686 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameScene.m; path = Models/GameScene.m; sourceTree = "<group>"; };
+		81D4F903197B7F0F00272686 /* AudioCaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioCaptureViewController.h; sourceTree = "<group>"; };
+		81D4F904197B7F0F00272686 /* AudioCaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioCaptureViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,6 +307,8 @@
 			children = (
 				08A91B07197B580800CA7095 /* MissionViewController.h */,
 				08A91B08197B580800CA7095 /* MissionViewController.m */,
+				81D4F903197B7F0F00272686 /* AudioCaptureViewController.h */,
+				81D4F904197B7F0F00272686 /* AudioCaptureViewController.m */,
 			);
 			name = "Game Play";
 			sourceTree = "<group>";
@@ -456,6 +461,7 @@
 				08A91B09197B580800CA7095 /* MissionViewController.m in Sources */,
 				81D4F8E2197AED0200272686 /* Game.m in Sources */,
 				81D4F8F6197B26C400272686 /* GameStartViewController.m in Sources */,
+				81D4F905197B7F0F00272686 /* AudioCaptureViewController.m in Sources */,
 				81D4F8A3197ACFA300272686 /* AppDelegate.m in Sources */,
 				81D4F89F197ACFA300272686 /* main.m in Sources */,
 				0806C215197ADE4A003E7C6D /* ActivityViewController.m in Sources */,
@@ -527,7 +533,6 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -565,7 +570,6 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;

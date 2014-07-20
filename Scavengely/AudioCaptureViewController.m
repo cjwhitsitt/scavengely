@@ -13,10 +13,13 @@
 
 @property (strong, nonatomic) UIImagePickerController *imagePickerController;
 @property (strong, nonatomic) IBOutlet UIButton *imageCaptureButton;
+@property (strong, nonatomic) UIImage *capturedImage;
 
 @end
 
 @implementation AudioCaptureViewController
+
+@synthesize capturedImage = _capturedImage;
 
 #pragma mark custom methods
 
@@ -31,14 +34,19 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    // if an image was already taken, return to that preview
+    
+    // otherwise, return to previous view controller
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     [self startCameraControllerFromViewController:self usingDelegate:self];
-    
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,19 +70,40 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
-    [picker popViewControllerAnimated:YES];
+    NSString *mediaType = [info objectForKey: UIImagePickerControllerMediaType];
+    UIImage *originalImage, *editedImage, *imageToSave;
+    
+    // Handle a still image capture
+    if (CFStringCompare ((CFStringRef) mediaType, kUTTypeImage, 0)
+        == kCFCompareEqualTo) {
+        
+        editedImage = (UIImage *) [info objectForKey:UIImagePickerControllerEditedImage];
+        
+        if (editedImage) {
+            imageToSave = editedImage;
+        } else {
+            originalImage = (UIImage *) [info objectForKey:UIImagePickerControllerOriginalImage];
+            imageToSave = originalImage;
+        }
+        
+        // Save the new image (original or edited) to the Camera Roll
+        self.capturedImage = imageToSave;
+        //UIImageWriteToSavedPhotosAlbum (imageToSave, nil, nil , nil);
+    }
+    
+    [[self parentViewController] dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    [[picker parentViewController] dismissModalViewControllerAnimated: YES];
+    [[self parentViewController] dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (BOOL)startCameraControllerFromViewController:(UIViewController*) controller
                                   usingDelegate:(id <UIImagePickerControllerDelegate, UINavigationControllerDelegate>) delegate {
     
-    if (([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera] == NO) || (delegate == nil) || (controller == nil))
+    if (([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera] == NO)
+        || (delegate == nil) || (controller == nil))
         return NO;
-    
     
     UIImagePickerController *cameraUI = [[UIImagePickerController alloc] init];
     cameraUI.sourceType = UIImagePickerControllerSourceTypeCamera;
@@ -89,7 +118,7 @@
     
     cameraUI.delegate = delegate;
     
-    [controller presentModalViewController: cameraUI animated: YES];
+    [controller presentViewController:cameraUI animated:YES completion:nil];
     return YES;
 }
 
