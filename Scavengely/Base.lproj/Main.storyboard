@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="sXv-yZ-s6r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="sXv-yZ-s6r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -434,7 +434,6 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="micButton" destination="nFO-nt-Rf0" id="25r-fC-UCc"/>
-                        <outlet property="missionButton" destination="Dtz-Jh-cp8" id="POL-hO-OfC"/>
                         <outlet property="missionImage" destination="Tgu-Hh-tCg" id="EgY-YV-jO3"/>
                         <outlet property="missionPrompt" destination="vTc-KE-ymy" id="Q4U-t8-fFq"/>
                         <outlet property="pictureButton" destination="Dtz-Jh-cp8" id="2HN-pO-x9L"/>
