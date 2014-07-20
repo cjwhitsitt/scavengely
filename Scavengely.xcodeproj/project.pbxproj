@@ -43,6 +43,8 @@
 		81D4F8F6197B26C400272686 /* GameStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D4F8F5197B26C400272686 /* GameStartViewController.m */; };
 		81D4F8F9197B33A400272686 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D4F8F8197B33A400272686 /* Player.m */; };
 		81D4F8FC197B348D00272686 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D4F8FB197B348D00272686 /* GameScene.m */; };
+		81D4F900197B6E4200272686 /* AudioCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D4F8FF197B6E4200272686 /* AudioCaptureViewController.m */; };
+		81D4F902197B781600272686 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D4F901197B781600272686 /* MobileCoreServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +110,9 @@
 		81D4F8F8197B33A400272686 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Player.m; path = Models/Player.m; sourceTree = "<group>"; };
 		81D4F8FA197B348D00272686 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = Models/GameScene.h; sourceTree = "<group>"; };
 		81D4F8FB197B348D00272686 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameScene.m; path = Models/GameScene.m; sourceTree = "<group>"; };
+		81D4F8FE197B6E4200272686 /* AudioCaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioCaptureViewController.h; sourceTree = "<group>"; };
+		81D4F8FF197B6E4200272686 /* AudioCaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioCaptureViewController.m; sourceTree = "<group>"; };
+		81D4F901197B781600272686 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81D4F902197B781600272686 /* MobileCoreServices.framework in Frameworks */,
 				81D4F895197ACFA300272686 /* CoreGraphics.framework in Frameworks */,
 				0806C227197AEDCE003E7C6D /* FacebookSDK.framework in Frameworks */,
 				81D4F897197ACFA300272686 /* UIKit.framework in Frameworks */,
@@ -180,6 +186,7 @@
 		81D4F891197ACFA300272686 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				81D4F901197B781600272686 /* MobileCoreServices.framework */,
 				0806C226197AEDCE003E7C6D /* FacebookSDK.framework */,
 				81D4F892197ACFA300272686 /* Foundation.framework */,
 				81D4F894197ACFA300272686 /* CoreGraphics.framework */,
@@ -264,6 +271,8 @@
 			children = (
 				08A91B07197B580800CA7095 /* MissionViewController.h */,
 				08A91B08197B580800CA7095 /* MissionViewController.m */,
+				81D4F8FE197B6E4200272686 /* AudioCaptureViewController.h */,
+				81D4F8FF197B6E4200272686 /* AudioCaptureViewController.m */,
 			);
 			name = "Game Play";
 			sourceTree = "<group>";
@@ -416,6 +425,7 @@
 				08A91B09197B580800CA7095 /* MissionViewController.m in Sources */,
 				81D4F8E2197AED0200272686 /* Game.m in Sources */,
 				81D4F8F6197B26C400272686 /* GameStartViewController.m in Sources */,
+				81D4F900197B6E4200272686 /* AudioCaptureViewController.m in Sources */,
 				81D4F8A3197ACFA300272686 /* AppDelegate.m in Sources */,
 				81D4F89F197ACFA300272686 /* main.m in Sources */,
 				0806C215197ADE4A003E7C6D /* ActivityViewController.m in Sources */,
