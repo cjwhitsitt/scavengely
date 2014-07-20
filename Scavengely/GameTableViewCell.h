@@ -10,7 +10,7 @@
 
 @interface GameTableViewCell : UITableViewCell
 
-@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet UIImageView *gameImage;
 @property (strong, nonatomic) IBOutlet UILabel *title;
 @property (strong, nonatomic) IBOutlet UILabel *numberOfMissions;
 

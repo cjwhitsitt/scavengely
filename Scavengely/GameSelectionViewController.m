@@ -8,6 +8,7 @@
 
 #import "GameSelectionViewController.h"
 #import "GameTableViewCell.h"
+#import "GameStartViewController.h"
 
 #import "Game.h"
 #import "Mission.h"
@@ -15,6 +16,7 @@
 @interface GameSelectionViewController ()
 
 @property (strong, nonatomic) NSArray *gameData;
+@property (strong, readonly, nonatomic) Game *selectedGame;
 
 @end
 
@@ -106,7 +108,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -114,8 +115,16 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    GameTableViewCell *selectedCell = (GameTableViewCell *)[self.tableView cellForRowAtIndexPath:[self.tableView indexPathForSelectedRow]];
+    NSString *titleOfSelectedGame = selectedCell.title.text;
+    
+    GameStartViewController *gameStartViewController = (GameStartViewController *)[segue destinationViewController];
+    [gameStartViewController setTitle:titleOfSelectedGame];
+    gameStartViewController.gameImage = self.selectedGame.image;
+    gameStartViewController.numberOfMissions = [NSString stringWithFormat:@"%lu missions",(unsigned long)[self.selectedGame.missions count]];
+    
 }
-*/
 
 #pragma mark UITableViewDataSource methods
 
@@ -130,14 +139,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     // pull the correct game from the game data
-    Game *game = [_gameData objectAtIndex:indexPath.row];
+    _selectedGame = [_gameData objectAtIndex:indexPath.row];
     
     // put data in cell outlets
     GameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"gameCell"];
-    [cell.title setText:game.name];
-    NSString *numberOfMissions = [NSString stringWithFormat:@"%lu", (unsigned long)[game.missions count]];
+    [cell.title setText:self.selectedGame.name];
+    NSString *numberOfMissions = [NSString stringWithFormat:@"%lu", (unsigned long)[self.selectedGame.missions count]];
     [cell.numberOfMissions setText:[NSString stringWithFormat:@"%@ missions", numberOfMissions]];
-    cell.imageView.image = game.image;
+    cell.gameImage.image = self.selectedGame.image;
     
     return cell;
 };

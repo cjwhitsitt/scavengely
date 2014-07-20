@@ -9,6 +9,8 @@
 #import "GameStartViewController.h"
 
 @interface GameStartViewController ()
+@property (strong, nonatomic) IBOutlet UIImageView *gameImageView;
+@property (strong, nonatomic) IBOutlet UILabel *numberOfMissionsLabel;
 
 @end
 
@@ -27,6 +29,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    self.gameImageView.image = self.gameImage;
+    [self.numberOfMissionsLabel setText:self.numberOfMissions];
 }
 
 - (void)didReceiveMemoryWarning

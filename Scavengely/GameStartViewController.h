@@ -10,4 +10,7 @@
 
 @interface GameStartViewController : UIViewController
 
+@property (strong, nonatomic) UIImage *gameImage;
+@property (strong, nonatomic) NSString *numberOfMissions;
+
 @end
