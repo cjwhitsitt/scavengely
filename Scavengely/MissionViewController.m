@@ -31,9 +31,18 @@
     // Do any additional setup after loading the view.
     
     if (self.currentMission != nil) {
-        //self.missionImage.image = self.currentMission.image;
-        //self.missionPrompt setText:self.currentMission.prompt;
-        // mission button goes here
+        self.missionImage.image = self.currentMission.image;
+        [self.missionPrompt setText:self.currentMission.prompt];
+        if (self.currentMission.type == MissionTypeImage) {
+            self.pictureButton.hidden = NO;
+            self.micButton.hidden = YES;
+        } else if (self.currentMission.type == MissionTypeAudio) {
+            self.pictureButton.hidden = YES;
+            self.micButton.hidden = NO;
+        } else {
+            NSLog(@"Uh oh, a mission has a bad type:\n%@", self.currentMission.prompt);
+        }
+        self.title = [NSString stringWithFormat:@"Mission %d", self.currentMission.number];
     }
 }
 

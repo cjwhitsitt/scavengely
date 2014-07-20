@@ -26,5 +26,6 @@ typedef enum {
 @property (nonatomic, strong) NSString *prompt;
 @property (nonatomic) int type;
 @property (nonatomic) NSTimeInterval elapsedTime;
+@property (nonatomic, strong) UIImage *image;
 
 @end

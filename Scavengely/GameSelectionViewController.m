@@ -36,20 +36,20 @@
         NSAssert(![gameName isMemberOfClass:[NSString class]], @"The name of a game from the plist is not a string");
         newGame.name = (NSString *)gameName;
         
-        id imageFileName = [rawGame objectForKey:@"image"];
-        NSAssert1(![imageFileName isMemberOfClass:[NSString class]], @"The filename for game \"%@\" isn't a string.", gameName);
-        NSString *imageNameWithoutExt = nil;
-        NSString *imageExt = nil;
-        NSRange lastPeriodRange = [imageFileName rangeOfString:@"." options:NSBackwardsSearch];
-        if (lastPeriodRange.location != NSNotFound) {
+        id gameImageFileName = [rawGame objectForKey:@"image"];
+        NSAssert1(![gameImageFileName isMemberOfClass:[NSString class]], @"The filename for game \"%@\" isn't a string.", gameName);
+        NSString *gameImageNameWithoutExt = nil;
+        NSString *gameImageExt = nil;
+        NSRange gameImgNameLastPeriodRange = [gameImageFileName rangeOfString:@"." options:NSBackwardsSearch];
+        if (gameImgNameLastPeriodRange.location != NSNotFound) {
             NSUInteger start = 0;
-            NSUInteger length = lastPeriodRange.location - start;
-            NSUInteger end = [imageFileName length]-1;
-            imageNameWithoutExt = [imageFileName substringWithRange:NSMakeRange(start, length)];
-            imageExt = [imageFileName substringWithRange:NSMakeRange(length+1, end-length)];
+            NSUInteger length = gameImgNameLastPeriodRange.location - start;
+            NSUInteger end = [gameImageFileName length]-1;
+            gameImageNameWithoutExt = [gameImageFileName substringWithRange:NSMakeRange(start, length)];
+            gameImageExt = [gameImageFileName substringWithRange:NSMakeRange(length+1, end-length)];
         }
-        NSString *imagePath = [[NSBundle mainBundle] pathForResource:imageNameWithoutExt  ofType:imageExt];
-        newGame.image = [UIImage imageWithContentsOfFile:imagePath];
+        NSString *gameImagePath = [[NSBundle mainBundle] pathForResource:gameImageNameWithoutExt ofType:gameImageExt];
+        newGame.image = [UIImage imageWithContentsOfFile:gameImagePath];
         
         id rawMissions = [rawGame objectForKey:@"missions"];
         NSAssert1(![rawMissions isMemberOfClass:[NSArray class]], @"The missions for game \"%@\" aren't formatted as an array.", gameName);
@@ -58,14 +58,13 @@
         int i = 0;
         for (NSDictionary *rawMission in rawMissions) {
             Mission *newMission = [[Mission alloc] init];
-            newMission.number = i;
+            newMission.number = i+1;
             
             id missionPrompt = [rawMission objectForKey:@"prompt"];
             NSAssert2(![missionPrompt isMemberOfClass:[NSString class]], @"Invalid prompt for mission #%d, game %@", i, gameName);
             newMission.prompt = (NSString *)missionPrompt;
             
             id missionTypeId = [rawMission objectForKey:@"type"];
-            
             NSAssert2(![missionTypeId isMemberOfClass:[NSString class]], @"Invalid prompt type for #%d, game %@", i, gameName);
             NSString *missionTypeString = (NSString *)missionTypeId;
             if ([missionTypeString isEqualToString:@"image"]) {
@@ -75,6 +74,27 @@
             } else {
                 NSLog(@"Invalid mission type (\"%@\") for mission #%d, game %@", missionTypeString, i, gameName);
             }
+            
+            id missionImageId = [rawMission objectForKey:@"image"];
+            NSString *missionImagePath = nil;
+            if (missionImageId == nil) {
+                missionImagePath = gameImagePath;
+            } else {
+                NSAssert2(![missionImageId isMemberOfClass:[NSString class]], @"Invalid mission image filename for #%d, game %@", i, gameName);
+                NSString *missionImageFileName = (NSString *)missionImageId;
+                NSString *missionImageNameWithoutExt = nil;
+                NSString *missionImageExt = nil;
+                NSRange missionImageNameLastPeriodRange = [missionImageFileName rangeOfString:@"." options:NSBackwardsSearch];
+                if (missionImageNameLastPeriodRange.location != NSNotFound) {
+                    NSUInteger start = 0;
+                    NSUInteger length = missionImageNameLastPeriodRange.location - start;
+                    NSUInteger end = [missionImageFileName length]-1;
+                    missionImageNameWithoutExt = [missionImageFileName substringWithRange:NSMakeRange(start, length)];
+                    missionImageExt = [missionImageFileName substringWithRange:NSMakeRange(length+1, end-length)];
+                }
+                missionImagePath = [[NSBundle mainBundle] pathForResource:missionImageNameWithoutExt ofType:missionImageExt];
+            }
+            newMission.image = [UIImage imageWithContentsOfFile:missionImagePath];
             
             [missions addObject:newMission];
         }
