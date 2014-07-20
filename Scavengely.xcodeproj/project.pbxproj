@@ -200,8 +200,6 @@
 				81D4F8A1197ACFA300272686 /* AppDelegate.h */,
 				81D4F8A2197ACFA300272686 /* AppDelegate.m */,
 				81D4F8A4197ACFA300272686 /* Main.storyboard */,
-				08A91B07197B580800CA7095 /* MissionViewController.h */,
-				08A91B08197B580800CA7095 /* MissionViewController.m */,
 				0806C216197ADEBA003E7C6D /* InvitesViewController.h */,
 				0806C217197ADEBA003E7C6D /* InvitesViewController.m */,
 				0806C219197ADEE4003E7C6D /* NewGameViewController.h */,
@@ -264,6 +262,8 @@
 		81D4F8E3197AEFBC00272686 /* Game Play */ = {
 			isa = PBXGroup;
 			children = (
+				08A91B07197B580800CA7095 /* MissionViewController.h */,
+				08A91B08197B580800CA7095 /* MissionViewController.m */,
 			);
 			name = "Game Play";
 			sourceTree = "<group>";
@@ -291,6 +291,7 @@
 				81D4F88B197ACFA300272686 /* Sources */,
 				81D4F88C197ACFA300272686 /* Frameworks */,
 				81D4F88D197ACFA300272686 /* Resources */,
+				81D4F8FD197B5DDF00272686 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -385,6 +386,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		81D4F8FD197B5DDF00272686 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=$(git rev-list HEAD | wc -l | tr -d ' ')\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		81D4F88B197ACFA300272686 /* Sources */ = {
