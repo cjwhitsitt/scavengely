@@ -8,7 +8,7 @@
 
 #import "GameSelectionViewController.h"
 #import "GameTableViewCell.h"
-
+#import "AppDelegate.h"
 #import "Game.h"
 #import "Mission.h"
 
@@ -89,6 +89,14 @@
 -(void)viewWillAppear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:NO];
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    GameScene *gameScene = appDelegate.gameScene;
+    
+    
+    NSLog(@"Players: %@", gameScene.players);
+    
+    
 }
 
 - (void)viewDidLoad

@@ -10,6 +10,7 @@
 
 
 @implementation AppDelegate
+@synthesize gameScene = _gameScene;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
