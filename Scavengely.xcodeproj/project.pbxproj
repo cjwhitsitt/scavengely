@@ -16,6 +16,8 @@
 		0806C227197AEDCE003E7C6D /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0806C226197AEDCE003E7C6D /* FacebookSDK.framework */; };
 		0806C22B197B082F003E7C6D /* default.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 0806C22A197B082F003E7C6D /* default.PNG */; };
 		08A91B09197B580800CA7095 /* MissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08A91B08197B580800CA7095 /* MissionViewController.m */; };
+		08A91B1E197B5BF600CA7095 /* camera-75@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 08A91B1C197B5BF600CA7095 /* camera-75@2x.png */; };
+		08A91B1F197B5BF600CA7095 /* mic-75@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 08A91B1D197B5BF600CA7095 /* mic-75@2x.png */; };
 		81D4F893197ACFA300272686 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D4F892197ACFA300272686 /* Foundation.framework */; };
 		81D4F895197ACFA300272686 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D4F894197ACFA300272686 /* CoreGraphics.framework */; };
 		81D4F897197ACFA300272686 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D4F896197ACFA300272686 /* UIKit.framework */; };
@@ -67,6 +69,8 @@
 		0806C22A197B082F003E7C6D /* default.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = default.PNG; path = images/default.PNG; sourceTree = "<group>"; };
 		08A91B07197B580800CA7095 /* MissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MissionViewController.h; sourceTree = "<group>"; };
 		08A91B08197B580800CA7095 /* MissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MissionViewController.m; sourceTree = "<group>"; };
+		08A91B1C197B5BF600CA7095 /* camera-75@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-75@2x.png"; sourceTree = "<group>"; };
+		08A91B1D197B5BF600CA7095 /* mic-75@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mic-75@2x.png"; sourceTree = "<group>"; };
 		81D4F88F197ACFA300272686 /* Scavengely.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scavengely.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81D4F892197ACFA300272686 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		81D4F894197ACFA300272686 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -145,6 +149,8 @@
 		0806C21D197ADFFE003E7C6D /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				08A91B1C197B5BF600CA7095 /* camera-75@2x.png */,
+				08A91B1D197B5BF600CA7095 /* mic-75@2x.png */,
 				0806C222197AE014003E7C6D /* news-50@2x.png */,
 				0806C220197AE00F003E7C6D /* inbox-50@2x.png */,
 				0806C21E197AE00A003E7C6D /* cards-50@2x.png */,
@@ -361,10 +367,12 @@
 				0806C22B197B082F003E7C6D /* default.PNG in Resources */,
 				0806C21F197AE00A003E7C6D /* cards-50@2x.png in Resources */,
 				81D4F8EF197B1D0000272686 /* BackToTheFuture.png in Resources */,
+				08A91B1E197B5BF600CA7095 /* camera-75@2x.png in Resources */,
 				81D4F8C8197AD31000272686 /* games.plist in Resources */,
 				0806C221197AE00F003E7C6D /* inbox-50@2x.png in Resources */,
 				81D4F8A6197ACFA300272686 /* Main.storyboard in Resources */,
 				81D4F8F3197B1DB500272686 /* Spiderman.png in Resources */,
+				08A91B1F197B5BF600CA7095 /* mic-75@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,7 @@
 @interface MissionViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *missionImage;
 @property (weak, nonatomic) IBOutlet UILabel *missionPrompt;
-@property (weak, nonatomic) IBOutlet UIButton *missionButton;
+@property (weak, nonatomic) IBOutlet UIButton *pictureButton;
+@property (weak, nonatomic) IBOutlet UIButton *micButton;
 
 @end
