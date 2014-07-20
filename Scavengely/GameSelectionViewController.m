@@ -118,13 +118,8 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    GameTableViewCell *selectedCell = (GameTableViewCell *)[self.tableView cellForRowAtIndexPath:[self.tableView indexPathForSelectedRow]];
-    NSString *titleOfSelectedGame = selectedCell.title.text;
-    
     GameStartViewController *gameStartViewController = (GameStartViewController *)[segue destinationViewController];
-    [gameStartViewController setTitle:titleOfSelectedGame];
-    gameStartViewController.gameImage = self.selectedGame.image;
-    gameStartViewController.numberOfMissions = [NSString stringWithFormat:@"%lu missions",(unsigned long)[self.selectedGame.missions count]];
+    gameStartViewController.selectedGame = [self.gameData objectAtIndex:[self.tableView indexPathForSelectedRow].row];
     
 }
 
@@ -140,21 +135,27 @@
 };
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    // pull the correct game from the game data
-    _selectedGame = [_gameData objectAtIndex:indexPath.row];
+    // get the correct game
+    Game *game = [self.gameData objectAtIndex:indexPath.row];
     
     // put data in cell outlets
     GameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"gameCell"];
-    [cell.title setText:self.selectedGame.name];
-    NSString *numberOfMissions = [NSString stringWithFormat:@"%lu", (unsigned long)[self.selectedGame.missions count]];
+    [cell.title setText:game.name];
+    NSString *numberOfMissions = [NSString stringWithFormat:@"%lu", (unsigned long)[game.missions count]];
     [cell.numberOfMissions setText:[NSString stringWithFormat:@"%@ missions", numberOfMissions]];
-    cell.gameImage.image = self.selectedGame.image;
+    cell.gameImage.image = game.image;
     
     return cell;
 };
 
+
+
 #pragma mark UITableViewDelegate methods
 
-
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    return indexPath;
+}
 
 @end

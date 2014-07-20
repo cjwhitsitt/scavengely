@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#import "Game.h"
+
 @interface GameStartViewController : UIViewController
 
-@property (strong, nonatomic) UIImage *gameImage;
-@property (strong, nonatomic) NSString *numberOfMissions;
+@property (strong, nonatomic) Game *selectedGame;
 
 @end

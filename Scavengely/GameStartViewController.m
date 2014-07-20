@@ -32,8 +32,11 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    self.gameImageView.image = self.gameImage;
-    [self.numberOfMissionsLabel setText:self.numberOfMissions];
+    
+    self.title = self.selectedGame.name;
+    self.gameImageView.image = self.selectedGame.image;
+    [self.numberOfMissionsLabel setText:[NSString stringWithFormat:@"%lu missions", (unsigned long)[self.selectedGame.missions count]]];
+    
 }
 
 - (void)didReceiveMemoryWarning
