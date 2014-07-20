@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+#import "Mission.h"
+
 @interface MissionViewController : UIViewController
+
+@property (strong, nonatomic) Mission *currentMission;
+
 @property (weak, nonatomic) IBOutlet UIImageView *missionImage;
 @property (weak, nonatomic) IBOutlet UILabel *missionPrompt;
 @property (weak, nonatomic) IBOutlet UIButton *missionButton;
