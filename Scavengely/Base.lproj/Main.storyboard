@@ -392,21 +392,28 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Here's a mission. You should do this as fast as you can. Hurry! Time's running out!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="302" translatesAutoresizingMaskIntoConstraints="NO" id="vTc-KE-ymy">
-                                <rect key="frame" x="9" y="226" width="302" height="50"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here's a mission. You should do this as fast as you can. Hurry! Time's running out!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="vTc-KE-ymy">
+                                <rect key="frame" x="20" y="228" width="280" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tgu-Hh-tCg">
-                                <rect key="frame" x="60" y="18" width="200" height="200"/>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tgu-Hh-tCg">
+                                <rect key="frame" x="60" y="20" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="aTB-QM-ZMy"/>
+                                    <constraint firstAttribute="width" constant="200" id="v6h-Df-zc2"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dtz-Jh-cp8">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dtz-Jh-cp8">
                                 <rect key="frame" x="0.0" y="409" width="320" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.47206419710000003" green="0.52226233479999995" blue="0.64307487009999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="wDb-0k-nAk"/>
+                                </constraints>
                                 <state key="normal" image="camera-75.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -415,10 +422,13 @@
                                     <segue destination="cR4-eT-tk2" kind="push" identifier="toPictureView" id="PsS-5w-ZCL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFO-nt-Rf0">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFO-nt-Rf0">
                                 <rect key="frame" x="0.0" y="409" width="320" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.47206419710000003" green="0.52226233479999995" blue="0.64307487009999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="P4Q-dh-aGq"/>
+                                </constraints>
                                 <state key="normal" image="mic-75.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -429,6 +439,19 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vTc-KE-ymy" firstAttribute="top" secondItem="Tgu-Hh-tCg" secondAttribute="bottom" constant="8" id="0df-u7-jWW"/>
+                            <constraint firstItem="AXz-OA-Csz" firstAttribute="top" secondItem="Dtz-Jh-cp8" secondAttribute="bottom" constant="20" id="3wv-df-aGY"/>
+                            <constraint firstItem="AXz-OA-Csz" firstAttribute="top" secondItem="nFO-nt-Rf0" secondAttribute="bottom" constant="20" id="5Hs-q7-VTf"/>
+                            <constraint firstAttribute="centerX" secondItem="Tgu-Hh-tCg" secondAttribute="centerX" id="5vk-7w-Hpf"/>
+                            <constraint firstAttribute="trailing" secondItem="nFO-nt-Rf0" secondAttribute="trailing" id="M2b-30-Cus"/>
+                            <constraint firstItem="vTc-KE-ymy" firstAttribute="leading" secondItem="PTh-w4-zZ0" secondAttribute="leading" constant="20" id="SEp-AH-gKN"/>
+                            <constraint firstItem="Tgu-Hh-tCg" firstAttribute="top" secondItem="N4A-UB-euI" secondAttribute="bottom" constant="20" id="Y9r-Fg-xtS"/>
+                            <constraint firstAttribute="trailing" secondItem="Dtz-Jh-cp8" secondAttribute="trailing" id="Zay-ET-OFn"/>
+                            <constraint firstAttribute="trailing" secondItem="vTc-KE-ymy" secondAttribute="trailing" constant="20" id="kGC-Z2-hox"/>
+                            <constraint firstItem="nFO-nt-Rf0" firstAttribute="leading" secondItem="PTh-w4-zZ0" secondAttribute="leading" id="lap-4C-rvB"/>
+                            <constraint firstItem="Dtz-Jh-cp8" firstAttribute="leading" secondItem="PTh-w4-zZ0" secondAttribute="leading" id="lx2-OH-kVl"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="AuI-xA-cqz"/>
                     <nil key="simulatedBottomBarMetrics"/>
